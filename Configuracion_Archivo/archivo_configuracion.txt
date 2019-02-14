@@ -17,5 +17,3 @@ set interfaces ge-0/0/5.0 family ethernet-switching port-mode access vlan member
 set system root-authentication plain-text-password
 $3cur1ty
 commit comment "Configured by Python Script"
-
-
