@@ -1,0 +1,21 @@
+configure
+set vlans VOIP vlan-id 22
+set vlans DATA vlan-id 26
+set interfaces xe-1/0/0.0 family ethernet-switching port-mode trunk vlan members [VOIP DATA]
+set switch-options voip interface ge-0/0/0.0 vlan VOIP
+set switch-options voip interface ge-0/0/1.0 vlan VOIP
+set switch-options voip interface ge-0/0/2.0 vlan VOIP
+set switch-options voip interface ge-0/0/3.0 vlan VOIP
+set switch-options voip interface ge-0/0/4.0 vlan VOIP
+set switch-options voip interface ge-0/0/5.0 vlan VOIP
+set interfaces ge-0/0/0.0 family ethernet-switching port-mode access vlan members DATA
+set interfaces ge-0/0/1.0 family ethernet-switching port-mode access vlan members DATA
+set interfaces ge-0/0/2.0 family ethernet-switching port-mode access vlan members DATA
+set interfaces ge-0/0/3.0 family ethernet-switching port-mode access vlan members DATA
+set interfaces ge-0/0/4.0 family ethernet-switching port-mode access vlan members DATA
+set interfaces ge-0/0/5.0 family ethernet-switching port-mode access vlan members DATA
+set system root-authentication plain-text-password
+$3cur1ty
+commit comment "Configured by Python Script"
+
+
