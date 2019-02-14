@@ -31,8 +31,3 @@ for ip in ip_addresses:
     print(output)
 
 print("Saliendo...")
-
-
-
-
-
