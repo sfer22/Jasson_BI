@@ -11,6 +11,7 @@ hostnames_master = []
 indexes = []
 ip_addresses = []
 hostnames = []
+port_value = 0
 
 # Obtener direccion IP basado en la lista de devices que se quieren verificar y el Inventario
 
@@ -51,9 +52,11 @@ for ip in ip_addresses:
 
     connect_lab = ConnectHandler(**juniper_switch)
 
-    output = connect_lab.send_command("show configuration interfaces | display set | match 0/0/{} | match vlan".format(ports[ip_addresses.index(ip)]))
+    output = connect_lab.send_command("show configuration interfaces | display set | match 0/0/{} | match vlan".format(ports[port_value]))
 
     print(output)
+
+    port_value += 1
 
 # Guardar el output del comando en un archivo txt
 
